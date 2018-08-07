@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 07, 2018 at 09:26 AM
+-- Generation Time: Aug 07, 2018 at 09:38 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -694,7 +694,6 @@ INSERT INTO `tbl_user_rule` (`id_rule`, `id_menu`, `id_level_user`) VALUES
 (56, 24, 6),
 (60, 1, 6),
 (61, 23, 6),
-(63, 21, 6),
 (64, 29, 6);
 
 -- --------------------------------------------------------
