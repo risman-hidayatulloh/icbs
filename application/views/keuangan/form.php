@@ -13,7 +13,7 @@
                 <tr><td>KELAS</td><td><input type="text" id="kelas" placeholder="KELAS" class="form-control" readonly></td></tr>
                 <tr><td>ROMBEL</td><td><input type="text" id="rombel" placeholder="ROMBEL" class="form-control" readonly></td></tr>
             </table>
-            *catatan : NIS harus sama dengan Data User
+            *catatan : Masukan NIS
         </div>
     </div>
     <!-- end: DYNAMIC TABLE PANEL -->
@@ -55,4 +55,3 @@
                 });
             }
         </script>
-

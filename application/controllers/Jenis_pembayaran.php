@@ -13,20 +13,38 @@ Class Jenis_pembayaran extends CI_Controller {
         $table = 'tbl_jenis_pembayaran';
         // nama PK
         $primaryKey = 'id_jenis_pembayaran';
-        // list field
-        $columns = array(
-            array('db' => 'nama_jenis_pembayaran', 'dt' => 'nama_jenis_pembayaran'),
-            array(
-                'db' => 'id_jenis_pembayaran',
-                'dt' => 'aksi',
-                'formatter' => function( $d) {
-                    //return "<a href='edit.php?id=$d'>EDIT</a>";
-                    return anchor('jenis_pembayaran/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"').' 
-                        '.anchor('jenis_pembayaran/delete/'.$d,'<i class="fa fa-trash"></i>','class="btn btn-xs btn-danger tooltips" data-placement="top" data-original-title="Delete"');
-                }
-            )
-        );
 
+        $cek = $this->session->userdata('id_guru');
+        // list field
+        if (!empty($cek)) {
+            $columns = array(
+                array('db' => 'nama_jenis_pembayaran', 'dt' => 'nama_jenis_pembayaran'),
+                array(
+                    'db' => 'id_jenis_pembayaran',
+                    'dt' => 'aksi',
+                    'formatter' => function( $d) {
+                        //return "<a href='edit.php?id=$d'>EDIT</a>";
+
+                        return anchor('jenis_pembayaran/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"');
+                    }
+                )
+            );
+        }
+        else{
+            //untuk sekolah
+            $columns = array(
+                array('db' => 'nama_jenis_pembayaran', 'dt' => 'nama_jenis_pembayaran'),
+                array(
+                    'db' => 'id_jenis_pembayaran',
+                    'dt' => 'aksi',
+                    'formatter' => function( $d) {
+                        //return "<a href='edit.php?id=$d'>EDIT</a>";
+                        return anchor('jenis_pembayaran/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"').' 
+                            '.anchor('jenis_pembayaran/delete/'.$d,'<i class="fa fa-trash"></i>','class="btn btn-xs btn-danger tooltips" data-placement="top" data-original-title="Delete"');
+                    }
+                )
+            );
+        }
         $sql_details = array(
             'user' => $this->db->username,
             'pass' => $this->db->password,

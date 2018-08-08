@@ -31,9 +31,18 @@
                 <label class="col-sm-2 control-label" for="form-field-1">
                     MATA JENIS
                 </label>
+                <?php $cek = $this->session->userdata('id_guru');
+                // 
+                if (!empty($cek)) {?>
                 <div class="col-sm-9">
+                    <input type="text" value="<?php echo $jenis_pembayaran['nama_jenis_pembayaran'];?>" name="nama_jenis_pembayaran" placeholder="MASUKAN NAMA MAPEL" id="form-field-1" class="form-control" readonly>
+                </div>
+                <?php } else{ //untuk sekolah?>
+                    <div class="col-sm-9">
                     <input type="text" value="<?php echo $jenis_pembayaran['nama_jenis_pembayaran'];?>" name="nama_jenis_pembayaran" placeholder="MASUKAN NAMA MAPEL" id="form-field-1" class="form-control">
                 </div>
+                <?php } ?>
+                    <!-- <?php echo $this->session->userdata('nama_lengkap') ?> -->
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="form-field-1">

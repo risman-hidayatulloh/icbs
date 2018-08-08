@@ -28,9 +28,8 @@
     <!-- end: DYNAMIC TABLE PANEL -->
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.0/jquery.dataTables.js"></script>
-<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.js"></script>
-
+<script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap.min.js"></script>
 
   <script>
         $(document).ready(function() {

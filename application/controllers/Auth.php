@@ -31,7 +31,7 @@ class Auth extends CI_Controller {
                     'id_level_user' =>  3,
                     'id_guru'       =>  $loginGuru['id_guru']);
                 $this->session->set_userdata($session);
-                redirect('jadwal');
+                redirect('jenis_pembayaran');
             } else {
                 // gagal login
                 redirect('auth');
