@@ -371,7 +371,7 @@
                         <!-- start: USER DROPDOWN -->
                         <li class="dropdown current-user">
                             <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-                                <img src="http://clipone.nurisakbar.com/assets/images/avatar-1-small.jpg" class="circle-img" alt="">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNDvfpfEu-BQtBfYa7oq5IS2GwSM39aUfGpSa1Y5arr-vpfeqZ" class="circle-img" alt="" height="30" width="30">
                                 <span class="username"><?php echo $this->session->userdata('nama_lengkap') ?></span>
                                 <i class="fa fa-angle-down" aria-hidden="true"></i>
                             </a>
