@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 08, 2018 at 10:07 AM
+-- Generation Time: Aug 08, 2018 at 10:17 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -64,7 +64,8 @@ INSERT INTO `tabel_menu` (`id`, `nama_menu`, `link`, `icon`, `is_main_menu`) VAL
 (27, 'phonebook', 'sms_group', 'fa fa-book', 26),
 (28, 'form sms', 'sms', 'fa fa-keyboard-o', 26),
 (29, 'Laporan', 'keuangan', 'fa fa-desktop', 0),
-(30, 'Laporan', 'keuangan', 'fa fa-desktop', 0);
+(30, 'Laporan', 'keuangan', 'fa fa-desktop', 0),
+(31, 'Penerimaan', 'jenis_pembayaran', 'fa fa-credit-card', 0);
 
 -- --------------------------------------------------------
 
@@ -708,10 +709,10 @@ INSERT INTO `tbl_user_rule` (`id_rule`, `id_menu`, `id_level_user`) VALUES
 (60, 1, 6),
 (61, 23, 6),
 (66, 21, 7),
-(68, 23, 7),
-(69, 23, 3),
 (71, 21, 3),
-(72, 29, 6);
+(72, 29, 6),
+(73, 31, 7),
+(74, 31, 3);
 
 -- --------------------------------------------------------
 
@@ -977,7 +978,7 @@ ALTER TABLE `tbl_walikelas`
 -- AUTO_INCREMENT for table `tabel_menu`
 --
 ALTER TABLE `tabel_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `tbl_biaya_sekolah`
@@ -1085,7 +1086,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_user_rule`
 --
 ALTER TABLE `tbl_user_rule`
-  MODIFY `id_rule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id_rule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `tbl_walikelas`
