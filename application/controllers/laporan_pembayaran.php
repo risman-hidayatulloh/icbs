@@ -11,13 +11,12 @@ Class laporan_pembayaran extends CI_Controller {
         // nama tabel
         $table = 'tbl_pembayaran';
         // nama PK
-        $primaryKey = 'id_pembayaran';
+        // $primaryKey = ;
         // list field
         $columns = array(
-            array('db' => 'nim', 'dt' => 'nim'),
-            array('db' => 'nama', 'dt' => 'nama'),
-            array('db' => 'tempat_lahir', 'dt' => 'tempat_lahir'),
-            array('db' => 'tanggal_lahir', 'dt' => 'tanggal_lahir')
+            array('db' => 'tanggal', 'dt' => 'tanggal'),
+            array('db' => 'jumlah', 'dt' => 'jumlah'),
+            array('db' => 'keterangan', 'dt' => 'keterangan')
         );
 
         $sql_details = array(
@@ -33,8 +32,8 @@ Class laporan_pembayaran extends CI_Controller {
     }
 
     function spp() {
-        $data = $this->Model_laporan_pembayaran->SPP();
+        $data['spp'] = $this->Model_laporan_pembayaran->SPP()->result_array();
 
-        $this->template->load('template','laporan_pembayaran/spp');
+        $this->template->load('template','laporan_pembayaran/spp', $data);
     }
 }

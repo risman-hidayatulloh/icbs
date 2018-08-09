@@ -6,7 +6,14 @@ class Model_laporan_pembayaran extends CI_Model {
     
     function SPP()
     {
-        
+        $nis = $_SESSION['nis'];
+        $this->db->select('*');
+        $this->db->from($this->table);
+        $this->db->where('nim', $nis);
+        $this->db->where('id_jenis_pembayaran', 3);
+        $this->db->order_by('tanggal', 'ASC');
+
+        return $this->db->get();
     }
     
     function update() {

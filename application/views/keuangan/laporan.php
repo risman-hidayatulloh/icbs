@@ -10,7 +10,7 @@
             <table  class="table table-striped table-bordered">
                 <tr><td>Jurusan</td><td><?php echo cmb_dinamis('jurusan', 'tbl_jurusan', 'nama_jurusan', 'kd_jurusan', null, "id='jurusan' onchange='loadData()'") ?></td></tr>
                 <tr><td>Rombel</td><td><div id="rombel"></div></td></tr>
-                <tr><td>Jenis Pembayaran</td><td><?php echo cmb_dinamis('jenis_pembayaran', 'tbl_jenis_pembayaran', 'nama_jenis_pembayaran', 'id_jenis_pembayaran',null,"id='jenis_bayar' onchange='loadSiswa()'")?></td></tr>
+                <tr><td>Jenis Pembayaran</td><td><?php echo cmb_dinamis('jenis_pemasukan', 'tbl_jenis_pemasukan', 'nama_jenis_pemasukan', 'id_jenis_pemasukan',null,"id='jenis_bayar' onchange='loadSiswa()'")?></td></tr>
                 <tr><td></td><td>
                     <!-- <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Export Data</button> --></td></tr>
             </table>

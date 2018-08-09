@@ -3,9 +3,8 @@
     <div style="margin-bottom: 10px;"></div>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <i class="fa fa-external-link-square"></i> Dynamic Table
+            <i class="fa fa-external-link-square"></i> Data Pembayaran SPP <?php echo $_SESSION['nama_lengkap']; ?>
             <div class="panel-tools">
-                <?php echo anchor('siswa/add','<i class="fa fa-pencil-square-o" aria-hidden="true"></i>',"title='Dambah Data'");?>
                 <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
                 <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal"> <i class="fa fa-wrench"></i> </a>
                 <a class="btn btn-xs btn-link panel-refresh" href="#"> <i class="fa fa-refresh"></i> </a>
@@ -14,69 +13,42 @@
             </div>
         </div>
         <div class="panel-body">
-            <table id="mytable" class="table table-striped table-bordered table-hover table-full-width dataTable" cellspacing="0" width="100%">
+            <table id="mytable2" class="table table-striped table-bordered table-hover table-full-width dataTable" cellspacing="0" width="100%">
                 <thead>
                     <tr>
                         <th>NO</th>
                         <th>BULAN</th>
-                        <th>TANGGAL</th>
+                        <th>TANGGAL BAYAR</th>
                         <th>JUMLAH</th>
                         <th>KETERANGAN</th>
                     </tr>
                 </thead>
+                <tbody>
+                <?php
+                    $count = 1;
+                    foreach ($spp as $key => $value) {
+                ?>
+                    <tr>
+                        <td><?php echo $count; ?></td>
+                        <td><?php 
+                            if($count%2==0) { echo "Agustus";
+                            } else { echo "Juli"; } ?></td>
+                        <td><?php echo $value['tanggal']; ?></td>
+                        <td><?php echo $value['jumlah']; ?></td>
+                        <td><?php echo $value['keterangan']; ?></td>
+                    </tr>
+                <?php
+                    $count++;
+                    }
+                ?>
+                </tbody>
             </table>
         </div>
     </div>
     <!-- end: DYNAMIC TABLE PANEL -->
 </div>
 
-<script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap.min.js"></script>
-
-
-  <script>
-        $(document).ready(function() {
-            var t = $('#mytable').DataTable( {
-                "ajax": '<?php echo site_url('laporan_pembayaran/data'); ?>',
-                "order": [[ 2, 'asc' ]],
-                "columns": [
-                    {
-                        "data": null,
-                        "width": "50px",
-                        "sClass": "text-center",
-                        "orderable": false,
-                    },
-                    {
-                        "data": "bulan",
-                        "width": "300px",
-                        "sClass": "text-center"
-                    },
-                    {
-                        "data": "tanggal",
-                        "width": "300px",
-                        "sClass": "text-center"
-                    },
-                    { 
-                        "data": "jumlah",
-                        "width": "300px",
-                        "sClass": "text-center"
-                    },
-                    { 
-                        "data": "keterangan",
-                        "width": "300px",
-                        "sClass": "text-center"
-                    },
-                ]
-            } );
-               
-            t.on( 'order.dt search.dt', function () {
-                t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
-                    cell.innerHTML = i+1;
-                } );
-            } ).draw();
-        } );
-    </script>
-    <!-- Modal -->
+<!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
