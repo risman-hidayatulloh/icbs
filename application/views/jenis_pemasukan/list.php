@@ -5,21 +5,12 @@
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i> Dynamic Table
             <div class="panel-tools">
-                <?php $cek = $this->session->userdata('id_guru');
-                // 
-                if (!empty($cek)) {?>
-                <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
-                <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal"> <i class="fa fa-wrench"></i> </a>
-                <a class="btn btn-xs btn-link panel-refresh" href="#"> <i class="fa fa-refresh"></i> </a>
-                <a class="btn btn-xs btn-link panel-expand" href="#"> <i class="fa fa-resize-full"></i> </a>
-                <?php } else{ //untuk sekolah?>
-                <?php echo anchor('jenis_pembayaran/add','<i class="fa fa-pencil-square-o" aria-hidden="true"></i>',"title='Dambah Data'");?>
+                <?php echo anchor('jenis_pemasukan/add','<i class="fa fa-pencil-square-o" aria-hidden="true"></i>',"title='Dambah Data'");?>
                 <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
                 <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal"> <i class="fa fa-wrench"></i> </a>
                 <a class="btn btn-xs btn-link panel-refresh" href="#"> <i class="fa fa-refresh"></i> </a>
                 <a class="btn btn-xs btn-link panel-expand" href="#"> <i class="fa fa-resize-full"></i> </a>
                 <a class="btn btn-xs btn-link panel-close" href="#"> <i class="fa fa-times"></i> </a>
-                <?php } ?>
             </div>
         </div>
         <div class="panel-body">
@@ -27,7 +18,7 @@
                 <thead>
                     <tr>
                         <th>NO</th>
-                        <th>KATEGORI JENIS PEMBAYARAN</th>
+                        <th>NAMA JENIS PEMASUKAN</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -43,7 +34,7 @@
   <script>
         $(document).ready(function() {
             var t = $('#mytable').DataTable( {
-                "ajax": '<?php echo site_url('jenis_pembayaran/data'); ?>',
+                "ajax": '<?php echo site_url('jenis_pemasukan/data'); ?>',
                 "order": [[ 2, 'asc' ]],
                 "columns": [
                     {
@@ -52,7 +43,7 @@
                         "sClass": "text-center",
                         "orderable": false,
                     },
-                    { "data": "nama_jenis_pembayaran" },
+                    { "data": "nama_jenis_pemasukan" },
                     { "data": "aksi","width": "100px" },
                 ]
             } );
