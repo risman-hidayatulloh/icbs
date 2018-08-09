@@ -5,7 +5,7 @@
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i> Dynamic Table
             <div class="panel-tools">
-                <?php echo anchor('jenis_pembayaran/add','<i class="fa fa-pencil-square-o" aria-hidden="true"></i>',"title='Dambah Data'");?>
+                <?php echo anchor('jenis_penerimaan/add','<i class="fa fa-pencil-square-o" aria-hidden="true"></i>',"title='Dambah Data'");?>
                 <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
                 <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal"> <i class="fa fa-wrench"></i> </a>
                 <a class="btn btn-xs btn-link panel-refresh" href="#"> <i class="fa fa-refresh"></i> </a>
@@ -18,7 +18,7 @@
                 <thead>
                     <tr>
                         <th>NO</th>
-                        <th>KATEGORI JENIS PEMBAYARAN</th>
+                        <th>KATEGORI JENIS PENERIMAAN</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -34,7 +34,7 @@
   <script>
         $(document).ready(function() {
             var t = $('#mytable').DataTable( {
-                "ajax": '<?php echo site_url('jenis_pembayaran/data'); ?>',
+                "ajax": '<?php echo site_url('jenis_penerimaan/data'); ?>',
                 "order": [[ 2, 'asc' ]],
                 "columns": [
                     {
@@ -43,7 +43,7 @@
                         "sClass": "text-center",
                         "orderable": false,
                     },
-                    { "data": "nama_jenis_pembayaran" },
+                    { "data": "nama_jenis_penerimaan" },
                     { "data": "aksi","width": "100px" },
                 ]
             } );
