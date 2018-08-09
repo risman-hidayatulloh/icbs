@@ -28,7 +28,7 @@
             
             <table id="mytable" class="table table-striped table-bordered table-hover table-full-width dataTable" cellspacing="0" width="100%">
                 <tr><td>TANGGAL</td><td><input type="date" name="tanggal" placeholder="Tanggal" class="form-control"></td></tr>
-                <tr><td>JENIS PEMBAYARAN</td><td><?php echo cmb_dinamis('jenis_pembayaran', 'tbl_jenis_pembayaran', 'nama_jenis_pembayaran', 'id_jenis_pembayaran')?></td></tr>
+                <tr><td>JENIS PEMBAYARAN</td><td><?php echo cmb_dinamis('jenis_pemasukan', 'tbl_jenis_pemasukan', 'nama_jenis_pemasukan', 'id_jenis_pemasukan')?></td></tr>
                 <tr><td>JUMLAH PEMBAYARAN</td><td><input type="int" name="jumlah_pembayaran" placeholder="JUMLAH" class="form-control"></td></tr>
                 <tr><td>KETERANGAN</td><td><input type="text" name="keterangan" placeholder="KETERANGAN TRANSAKSI" class="form-control"></td></tr>
                 <tr><td colspan="2"><button type="submit" name="submit" class="btn btn-primary btn-sm">SIMPAN TRANSAKSI</button> </<td></tr>
@@ -39,19 +39,19 @@
     <!-- end: DYNAMIC TABLE PANEL -->
 </div>
 
-        <script type="text/javascript">
-            function isi_otomatis(){
-                var nis = $("#nis").val();
-                $.ajax({
-                    url: '<?php echo base_url()?>index.php/keuangan/form_siswa_autocomplate',
-                    data:"nis="+nis ,
-                }).success(function (data) {
-                    var json = data,
-                    obj = JSON.parse(json);
-                    $('#nama').val(obj.nama);
-                    $('#kelas').val(obj.kelas);
-                    $('#jurusan').val(obj.jurusan);
-                    $('#rombel').val(obj.rombel);
-                });
-            }
-        </script>
+<script type="text/javascript">
+    function isi_otomatis(){
+        var nis = $("#nis").val();
+        $.ajax({
+            url: '<?php echo base_url()?>index.php/keuangan/form_siswa_autocomplate',
+            data:"nis="+nis ,
+        }).success(function (data) {
+            var json = data,
+            obj = JSON.parse(json);
+            $('#nama').val(obj.nama);
+            $('#kelas').val(obj.kelas);
+            $('#jurusan').val(obj.jurusan);
+            $('#rombel').val(obj.rombel);
+        });
+    }
+</script>

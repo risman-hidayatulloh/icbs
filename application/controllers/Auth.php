@@ -29,6 +29,7 @@ class Auth extends CI_Controller {
                 $session = array(
                     'nama_lengkap'  =>  $loginGuru['nama_guru'],
                     'id_level_user' =>  3,
+                    'nis' =>  $loginGuru['nuptk'],
                     'id_guru'       =>  $loginGuru['id_guru']);
                 $this->session->set_userdata($session);
                 redirect('jenis_pembayaran');

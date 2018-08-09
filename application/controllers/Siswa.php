@@ -32,16 +32,7 @@ Class Siswa extends CI_Controller {
             array('db' => 'nim', 'dt' => 'nim'),
             array('db' => 'nama', 'dt' => 'nama'),
             array('db' => 'tempat_lahir', 'dt' => 'tempat_lahir'),
-            array('db' => 'tanggal_lahir', 'dt' => 'tanggal_lahir'),
-            array(
-                'db' => 'nim',
-                'dt' => 'aksi',
-                'formatter' => function( $d) {
-                    //return "<a href='edit.php?id=$d'>EDIT</a>";
-                    return anchor('siswa/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"').' 
-                        '.anchor('siswa/delete/'.$d,'<i class="fa fa-trash"></i>','class="btn btn-xs btn-danger tooltips" data-placement="top" data-original-title="Delete"');
-                }
-            )
+            array('db' => 'tanggal_lahir', 'dt' => 'tanggal_lahir')
         );
 
         $sql_details = array(

@@ -1,15 +1,11 @@
 <div class="col-md-12">
-    <!-- start: DYNAMIC TABLE PANEL -->
-   <?php echo anchor('siswa/add','Input Data Baru',array('class'=>'btn btn-danger btn-sm'))?>
-   <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Import Data Excel Dari Dapodik</button>
 
     <div style="margin-bottom: 10px;"></div>
     <div class="panel panel-default">
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i> Dynamic Table
             <div class="panel-tools">
-                <?php echo anchor('siswa/add','<i class="fa fa-pencil-square-o" aria-hidden="true"></i>',"title='Tambah Data'");?>
+                <?php echo anchor('siswa/add','<i class="fa fa-pencil-square-o" aria-hidden="true"></i>',"title='Dambah Data'");?>
                 <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
                 <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal"> <i class="fa fa-wrench"></i> </a>
                 <a class="btn btn-xs btn-link panel-refresh" href="#"> <i class="fa fa-refresh"></i> </a>
@@ -22,12 +18,10 @@
                 <thead>
                     <tr>
                         <th>NO</th>
-                        <th>FOTO</th>
-                        <th>NIM</th>
-                        <th>NAMA</th>
-                        <th>TEMPAT LAHIR</th>
-                        <th>TANGGAL LAHIR</th>
-                        <th></th>
+                        <th>BULAN</th>
+                        <th>TANGGAL</th>
+                        <th>JUMLAH</th>
+                        <th>KETERANGAN</th>
                     </tr>
                 </thead>
             </table>
@@ -43,7 +37,7 @@
   <script>
         $(document).ready(function() {
             var t = $('#mytable').DataTable( {
-                "ajax": '<?php echo site_url('siswa/data'); ?>',
+                "ajax": '<?php echo site_url('laporan_pembayaran/data'); ?>',
                 "order": [[ 2, 'asc' ]],
                 "columns": [
                     {
@@ -52,16 +46,26 @@
                         "sClass": "text-center",
                         "orderable": false,
                     },
-                    { "data": "foto" },
                     {
-                        "data": "nim",
-                        "width": "120px",
+                        "data": "bulan",
+                        "width": "300px",
                         "sClass": "text-center"
                     },
-                    { "data": "nama" },
-                    { "data": "tempat_lahir" },
-                    { "data": "tanggal_lahir", "width": "150px" },
-                    { "data": "aksi","width": "80px" },
+                    {
+                        "data": "tanggal",
+                        "width": "300px",
+                        "sClass": "text-center"
+                    },
+                    { 
+                        "data": "jumlah",
+                        "width": "300px",
+                        "sClass": "text-center"
+                    },
+                    { 
+                        "data": "keterangan",
+                        "width": "300px",
+                        "sClass": "text-center"
+                    },
                 ]
             } );
                
