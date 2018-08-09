@@ -45,6 +45,21 @@ function chek_komponen_biaya($id_jenis_pembayaran) {
     }
 }
 
+//pemasukan keuangan2
+function chek_komponen_biaya_pemasukan($id_jenis_pemasukan) {
+    $ci = & get_instance();
+    $where = array(
+        'id_jenis_pemasukan' => $id_jenis_pemasukan,
+        'id_tahun_akademik' => get_tahun_akademik_aktif('semester_aktif'));
+    $biaya = $ci->db->get_where('tbl_biaya_pemasukan', $where);
+    if ($biaya->num_rows() > 0) {
+        $row = $biaya->row_array();
+        return $row['jumlah_biaya'];
+    } else {
+        return 0;
+    }
+}
+
 function chekAksesModule() {
     $ci = & get_instance();
     // ambil parameter uri segment untuk controller dan method
