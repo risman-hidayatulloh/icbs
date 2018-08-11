@@ -1,6 +1,6 @@
 <?php
 
-Class laporan_pembayaran extends CI_Controller {
+Class Laporan_pembayaran extends CI_Controller {
 
     function __construct() {
         parent::__construct();
@@ -35,5 +35,17 @@ Class laporan_pembayaran extends CI_Controller {
         $data['spp'] = $this->Model_laporan_pembayaran->SPP()->result_array();
 
         $this->template->load('template','laporan_pembayaran/spp', $data);
+    }
+
+    function buku() {
+        // $data['buku'] = $this->Model_laporan_pembayaran->SPP()->result_array();
+
+        $this->template->load('template','laporan_pembayaran/buku');
+    }
+
+    function daftar_ulang() {
+        // $data['buku'] = $this->Model_laporan_pembayaran->SPP()->result_array();
+
+        $this->template->load('template','laporan_pembayaran/daftar_ulang');
     }
 }

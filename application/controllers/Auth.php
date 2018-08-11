@@ -32,7 +32,7 @@ class Auth extends CI_Controller {
                     'nis' =>  $loginGuru['nuptk'],
                     'id_guru'       =>  $loginGuru['id_guru']);
                 $this->session->set_userdata($session);
-                redirect('jenis_pembayaran');
+                redirect('laporan_pembayaran/spp');
             } else {
                 // gagal login
                 redirect('auth');
