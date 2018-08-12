@@ -10,7 +10,7 @@
             <table  class="table table-striped table-bordered">
                 <!-- <tr><td>Jurusan</td><td><?php echo cmb_dinamis('jurusan', 'tbl_jurusan', 'nama_jurusan', 'kd_jurusan', null, "id='jurusan' onchange='loadData()'") ?></td></tr>
                 <tr><td>Rombel</td><td><div id="rombel"></div></td></tr> -->
-                <tr><td>Jenis Pemasukan</td><td><?php echo cmb_dinamis('jenis_pemasukan', 'tbl_jenis_pemasukan', 'nama_jenis_pemasukan', 'id_jenis_pemasukan',null,"id='jenis_bayar' onchange='loadSiswa()'")?></td></tr>
+                <tr><td>Jenis Pengeluaran</td><td><?php echo cmb_dinamis('jenis_pemasukan', 'tbl_jenis_pemasukan', 'nama_jenis_pemasukan', 'id_jenis_pemasukan',null,"id='jenis_bayar' onchange='loadSiswa()'")?></td></tr>
                 <tr><td></td><td>
                     <!-- <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Export Data</button> --></td></tr>
             </table>
@@ -34,8 +34,8 @@
 </div> -->
     <!-- end: DYNAMIC TABLE PANEL -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.0/jquery.dataTables.js"></script>
-<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.js"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap.min.js"></script>
 
 
 <script type="text/javascript">
@@ -45,7 +45,7 @@
     });
 </script>
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
     function loadRombel(){
         var jurusan=$("#jurusan").val();
         $.ajax({
@@ -74,4 +74,4 @@
     
     }
     
-</script> -->
+</script>

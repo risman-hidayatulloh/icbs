@@ -23,7 +23,7 @@ class Auth extends CI_Controller {
             if (!empty($loginUser)) {
                 // sukses login user
                 $this->session->set_userdata($loginUser);
-                redirect('siswa');
+                redirect('home');
             } elseif (!empty($loginGuru)) {
                 // login guru
                 $session = array(
