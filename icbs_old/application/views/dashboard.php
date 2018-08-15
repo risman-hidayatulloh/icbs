@@ -1,7 +1,7 @@
             <div class="container">    
                 <div class="row">
                     <div class="col-md-3">
-                        <form class="form-group" action="<?php echo site_url('Home/filterDataBayar'); ?>" method="post">
+                        <form class="form-group" action="" method="post">
                             <label>Berdasarkan</label>
                                 <select class="form-control" name="berdasarkan">
                                     <option>Pembayaran</option>

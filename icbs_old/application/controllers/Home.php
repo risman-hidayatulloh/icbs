@@ -5,7 +5,7 @@ Class Home extends CI_Controller {
     function __construct() {
         parent::__construct();
         //chekAksesModule();
-        $this->load->library('ssp');
+        //$this->load->library('ssp');
     }
 
     function index() {
