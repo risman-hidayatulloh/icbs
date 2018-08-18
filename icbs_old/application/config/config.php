@@ -35,7 +35,7 @@ $config['base_url'] = 'http://localhost/icbs/icbs_old';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------

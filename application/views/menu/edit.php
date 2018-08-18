@@ -24,52 +24,50 @@
         <div class="panel-body">
 
             <?php
-            echo form_open_multipart('users/edit', 'role="form" class="form-horizontal"');
-            echo form_hidden('id_user',$user['id_user']);
+            echo form_open('menu/edit', 'role="form" class="form-horizontal"');
+            echo form_hidden('id', $menu['id']);
             ?>
 
-
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="form-field-1">
-                    NAMA LENGKAP
+                    NAMA MENU
                 </label>
                 <div class="col-sm-9">
-                    <input type="text" name="nama_lengkap" value="<?php echo $user['nama_lengkap'];?>" placeholder="MASUKAN NAMA LENGKAP" id="form-field-1" class="form-control">
+                    <input type="text" value="<?php echo $menu['nama_menu'] ?>" name="nama menu" placeholder="MASUKAN NAMA MENU" id="form-field-1" class="form-control">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="form-field-1">
-                    USERNAME
+                    LINK
                 </label>
                 <div class="col-sm-9">
-                    <input type="text" name="username" value="<?php echo $user['username'];?>" placeholder="MASUKAN USERNAME" id="form-field-1" class="form-control">
+                    <input type="text" name="link" value="<?php echo $menu['link'] ?>" placeholder="MASUKAN LINK" id="form-field-1" class="form-control">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="form-field-1">
-                    PASSWORD
+                    ICON
                 </label>
                 <div class="col-sm-9">
-                    <input type="password" name="password" placeholder="MASUKAN PASSWORD" id="form-field-1" class="form-control">
+                    <input type="text" name="icon" value="<?php echo $menu['icon'] ?>" placeholder="MASUKAN KODE ICON" id="form-field-1" class="form-control">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="form-field-1">
-                    LEVEL USER
+                    IS MAIN MENU
                 </label>
-                <div class="col-sm-2">
-                    <?php
-                    echo cmb_dinamis('id_level_user', 'tbl_level_user', 'nama_level', 'id_level_user',$user['id_level_user']);
-                    ?>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="form-field-1">
-                    Foto
-                </label>
-                <div class="col-sm-2">
-                    <input type="file" name="userfile">
-                    <img src="<?php echo base_url().'uploads/foto_user/'.$user['foto']?>" width="200">
+                <div class="col-sm-9">
+                    <select name="is_main_menu" class="form-control">
+                        <option value="0">MAIN MENU</option>
+                        <?php
+                        $tabel_menu = $this->db->get('tabel_menu');
+                        foreach ($tabel_menu->result() as $row) {
+                            echo "<option value='$row->id' ";
+                            echo $row->id==$menu['is_main_menu']?'selected':'';
+                            echo ">$row->nama_menu</option>";
+                        }
+                        ?>
+                    </select>
                 </div>
             </div>
             <div class="form-group">
@@ -77,10 +75,10 @@
 
                 </label>
                 <div class="col-sm-1">
-                    <button type="submit" name="submit" class="btn btn-danger  btn-sm">SIMPAN</button>
+                    <button type="submit" name="submit" class="btn btn-danger btn-sm">SIMPAN</button>
                 </div>
                 <div class="col-sm-1">
-                    <?php echo anchor('users', 'Kembali', array('class' => 'btn btn-info btn-sm')); ?>
+                    <?php echo anchor('menu', 'Kembali', array('class' => 'btn btn-info btn-sm')); ?>
                 </div>
             </div>
             </form>

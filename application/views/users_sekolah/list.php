@@ -1,11 +1,11 @@
 <div class="col-md-12">
     <!-- start: DYNAMIC TABLE PANEL -->
-   <?php echo anchor('users/rule','RULE USER',array('class'=>'btn btn-danger btn-sm'));?>
+   <!-- <?php echo anchor('users_sekolah/rule','RULE USER',array('class'=>'btn btn-danger btn-sm'));?> -->
     <div class="panel panel-default">
         <div class="panel-heading">
             <i class="fa fa-external-link-square"></i> Dynamic Table
             <div class="panel-tools">
-                <?php echo anchor('users/add','<i class="fa fa-pencil-square-o" aria-hidden="true"></i>',"title='Dambah Data'");?>
+                <?php echo anchor('users_sekolah/add','<i class="fa fa-pencil-square-o" aria-hidden="true"></i>',"title='Dambah Data'");?>
                 <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
                 <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal"> <i class="fa fa-wrench"></i> </a>
                 <a class="btn btn-xs btn-link panel-refresh" href="#"> <i class="fa fa-refresh"></i> </a>
@@ -29,14 +29,14 @@
     <!-- end: DYNAMIC TABLE PANEL -->
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.0/jquery.dataTables.js"></script>
-<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.js"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap.min.js"></script>
 
 
   <script>
         $(document).ready(function() {
             var t = $('#mytable').DataTable( {
-                "ajax": '<?php echo site_url('users/data'); ?>',
+                "ajax": '<?php echo site_url('users_sekolah/data'); ?>',
                 "order": [[ 2, 'asc' ]],
                 "columns": [
                     {

@@ -1,18 +1,24 @@
     <div class="container">    
+
         <div class="row">
-            <div class="col-md-3">
-                <form class="form-group" action="" method="post">
-                    <label>Berdasarkan</label>
-                        <select class="form-control" name="berdasarkan">
-                            <option>Pembayaran</option>
-                            <option>Tanggal</option>
-                            <option>Bulan</option>
-                            <option>Tahun</option>
-                    </select>
-                    <input type="submit" name="submit" class="form-control">
-                </form>
+            <div class="col-md-2">
+                <button class="btn btn-icon btn-block">
+                    <i class="clip-user-3"></i>
+                    Total Santri <span class="badge badge-primary"> ! </span>
+                    </br> 0
+                </button>
+            </div>
+
+            <div class="col-md-2">
+                <button class="btn btn-icon btn-block">
+                    <i class="clip-user-5"></i>
+                    Total Karyawan <span class="badge badge-primary"> ! </span>
+                    </br> <?php  $jumlah_users_sekolah=$this->db->get('tbl_user_sekolah')->num_rows();
+                                    echo $jumlah_users_sekolah;    ?>
+                </button>
             </div>
         </div>
+
         <!-- start: PAGE CONTENT -->
         <div class="row">
             <div class="col-md-12">

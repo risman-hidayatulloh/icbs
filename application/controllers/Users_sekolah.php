@@ -5,26 +5,26 @@ Class Users_sekolah extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->library('ssp');
-        $this->load->model('Model_users');
+        $this->load->model('M_users_sekolah');
     }
 
     function data() {
         // nama tabel
-        $table = 'v_tbl_user';
+        $table = 'v_tbl_user_sekolah';
         // nama PK
-        $primaryKey = 'id_user';
+        $primaryKey = 'id_user_sekolah';
         // list field
         $columns = array(
             array('db' => 'foto', 'dt' => 'foto'),
             array('db' => 'nama_lengkap', 'dt' => 'nama_lengkap'),
             array('db' => 'nama_level', 'dt' => 'nama_level'),
             array(
-                'db' => 'id_user',
+                'db' => 'id_user_sekolah',
                 'dt' => 'aksi',
                 'formatter' => function( $d) {
                     //return "<a href='edit.php?id=$d'>EDIT</a>";
-                    return anchor('users/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"').' 
-                        '.anchor('users/delete/'.$d,'<i class="fa fa-trash"></i>','class="btn btn-xs btn-danger tooltips" data-placement="top" data-original-title="Delete"');
+                    return anchor('users_sekolah/edit/'.$d,'<i class="fa fa-edit"></i>','class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit"').' 
+                        '.anchor('users_sekolah/delete/'.$d,'<i class="fa fa-trash"></i>','class="btn btn-xs btn-danger tooltips" data-placement="top" data-original-title="Delete"');
                 }
             )
         );
@@ -42,44 +42,44 @@ Class Users_sekolah extends CI_Controller {
     }
 
     function index() {
-        $this->template->load('template', 'users/list');
+        $this->template->load('template', 'users_sekolah/list');
     }
 
     function add() {
         if (isset($_POST['submit'])) {
             $uplodFoto = $this->upload_foto_user();
-            $this->Model_users->save($uplodFoto);
-            redirect('users');
+            $this->M_users_sekolah->save($uplodFoto);
+            redirect('users_sekolah');
         } else {
-            $this->template->load('template', 'users/add');
+            $this->template->load('template', 'users_sekolah/add');
         }
     }
     
     function edit(){
         if(isset($_POST['submit'])){
             $uplodFoto = $this->upload_foto_user();
-            $this->Model_users->update($uplodFoto);
-            redirect('users');
+            $this->M_users_sekolah->update($uplodFoto);
+            redirect('users_sekolah');
         }else{
-            $id_user       = $this->uri->segment(3);
-            $data['user']  = $this->db->get_where('tbl_user',array('id_user'=>$id_user))->row_array();
-            $this->template->load('template', 'users/edit',$data);
+            $id_user_sekolah       = $this->uri->segment(3);
+            $data['user']  = $this->db->get_where('tbl_user_sekolah',array('id_user_sekolah'=>$id_user_sekolah))->row_array();
+            $this->template->load('template', 'users_sekolah/edit',$data);
         }
     }
     
     function delete(){
-        $id_user = $this->uri->segment(3);
-        if(!empty($id_user)){
+        $id_user_sekolah = $this->uri->segment(3);
+        if(!empty($id_user_sekolah)){
             // proses delete data
-            $this->db->where('id_user',$id_user);
-            $this->db->delete('tbl_user');
+            $this->db->where('id_user_sekolah',$id_user_sekolah);
+            $this->db->delete('tbl_user_sekolah');
         }
-        redirect('users');
+        redirect('users_sekolah');
     }
     
     
      function upload_foto_user(){
-        $config['upload_path']          = './uploads/foto_user/';
+        $config['upload_path']          = './uploads/foto_user_sekolah/';
         $config['allowed_types']        = 'jpg|png';
         $config['max_size']             = 1024; // imb
         $this->load->library('upload', $config);
@@ -91,7 +91,7 @@ Class Users_sekolah extends CI_Controller {
     
     
     function rule(){
-        $this->template->load('template','users/rule');
+        $this->template->load('template','users_sekolah/rule');
     }
     
     function modul(){

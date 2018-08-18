@@ -40,7 +40,7 @@
     </head>
     <!-- end: HEAD -->
     <!-- start: BODY -->
-    <body class="login example2">
+    <body class="login example1">
         <div class="main-login col-sm-4 col-sm-offset-4">
             <div class="logo">
                 INFORMASI AKADEMIK

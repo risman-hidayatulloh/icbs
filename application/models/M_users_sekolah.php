@@ -1,6 +1,6 @@
 <?php
 
-class Model_users_sekolah extends CI_Model {
+class M_users_sekolah extends CI_Model {
 
     public $table ="tbl_user_sekolah";
     
@@ -34,8 +34,8 @@ class Model_users_sekolah extends CI_Model {
             'foto'            => $foto
         );
         }
-        $id_user   = $this->input->post('id_user');
-        $this->db->where('id_user',$id_user);
+        $id_user_sekolah   = $this->input->post('id_user_sekolah');
+        $this->db->where('id_user_sekolah',$id_user_sekolah);
         $this->db->update($this->table,$data);
     }
 

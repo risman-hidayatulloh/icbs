@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `icbsponp_icbs`
+-- Database: `root_icbs`
 --
 
 -- --------------------------------------------------------
@@ -964,7 +964,7 @@ CREATE TABLE `v_walikelas` (
 --
 DROP TABLE IF EXISTS `v_master_rombel`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`icbsponp`@`localhost` SQL SECURITY DEFINER VIEW `v_master_rombel`  AS  select `tr`.`id_rombel` AS `id_rombel`,`tr`.`nama_rombel` AS `nama_rombel`,`tr`.`kelas` AS `kelas`,`tr`.`kd_jurusan` AS `kd_jurusan`,`tj`.`nama_jurusan` AS `nama_jurusan` from (`tbl_rombel` `tr` join `tbl_jurusan` `tj`) where `tj`.`kd_jurusan` = `tr`.`kd_jurusan` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_master_rombel`  AS  select `tr`.`id_rombel` AS `id_rombel`,`tr`.`nama_rombel` AS `nama_rombel`,`tr`.`kelas` AS `kelas`,`tr`.`kd_jurusan` AS `kd_jurusan`,`tj`.`nama_jurusan` AS `nama_jurusan` from (`tbl_rombel` `tr` join `tbl_jurusan` `tj`) where `tj`.`kd_jurusan` = `tr`.`kd_jurusan` ;
 
 -- --------------------------------------------------------
 
@@ -973,7 +973,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`icbsponp`@`localhost` SQL SECURITY DEFINER V
 --
 DROP TABLE IF EXISTS `v_tbl_user`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`icbsponp`@`localhost` SQL SECURITY DEFINER VIEW `v_tbl_user`  AS  select `tu`.`id_user` AS `id_user`,`tu`.`nama_lengkap` AS `nama_lengkap`,`tu`.`username` AS `username`,`tu`.`password` AS `password`,`tu`.`id_level_user` AS `id_level_user`,`tu`.`foto` AS `foto`,`tlu`.`nama_level` AS `nama_level` from (`tbl_user` `tu` join `tbl_level_user` `tlu`) where `tu`.`id_level_user` = `tlu`.`id_level_user` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_tbl_user`  AS  select `tu`.`id_user` AS `id_user`,`tu`.`nama_lengkap` AS `nama_lengkap`,`tu`.`username` AS `username`,`tu`.`password` AS `password`,`tu`.`id_level_user` AS `id_level_user`,`tu`.`foto` AS `foto`,`tlu`.`nama_level` AS `nama_level` from (`tbl_user` `tu` join `tbl_level_user` `tlu`) where `tu`.`id_level_user` = `tlu`.`id_level_user` ;
 
 -- --------------------------------------------------------
 
@@ -982,7 +982,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`icbsponp`@`localhost` SQL SECURITY DEFINER V
 --
 DROP TABLE IF EXISTS `v_walikelas`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`icbsponp`@`localhost` SQL SECURITY DEFINER VIEW `v_walikelas`  AS  select `g`.`nama_guru` AS `nama_guru`,`r`.`nama_rombel` AS `nama_rombel`,`w`.`id_walikelas` AS `id_walikelas`,`w`.`id_tahun_akademik` AS `id_tahun_akademik`,`j`.`nama_jurusan` AS `nama_jurusan`,`r`.`kelas` AS `kelas`,`ta`.`tahun_akademik` AS `tahun_akademik` from ((((`tbl_walikelas` `w` join `tbl_rombel` `r`) join `tbl_guru` `g`) join `tbl_jurusan` `j`) join `tbl_tahun_akademik` `ta`) where `w`.`id_guru` = `g`.`id_guru` and `w`.`id_rombel` = `r`.`id_rombel` and `j`.`kd_jurusan` = `r`.`kd_jurusan` and `ta`.`id_tahun_akademik` = `w`.`id_tahun_akademik` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_walikelas`  AS  select `g`.`nama_guru` AS `nama_guru`,`r`.`nama_rombel` AS `nama_rombel`,`w`.`id_walikelas` AS `id_walikelas`,`w`.`id_tahun_akademik` AS `id_tahun_akademik`,`j`.`nama_jurusan` AS `nama_jurusan`,`r`.`kelas` AS `kelas`,`ta`.`tahun_akademik` AS `tahun_akademik` from ((((`tbl_walikelas` `w` join `tbl_rombel` `r`) join `tbl_guru` `g`) join `tbl_jurusan` `j`) join `tbl_tahun_akademik` `ta`) where `w`.`id_guru` = `g`.`id_guru` and `w`.`id_rombel` = `r`.`id_rombel` and `j`.`kd_jurusan` = `r`.`kd_jurusan` and `ta`.`id_tahun_akademik` = `w`.`id_tahun_akademik` ;
 
 --
 -- Indexes for dumped tables
