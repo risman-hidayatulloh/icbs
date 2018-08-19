@@ -15,6 +15,7 @@ class M_users_santri extends CI_Model {
             'gender'        => $this->input->post('gender', TRUE),
             'foto'          => $foto,
             //'id_rombel'     => $this->input->post('rombel',TRUE),
+            'id_level_user' => 3,
             'tahun_masuk'   => $this->input->post('tahun_masuk', TRUE)
         );
         $this->db->insert($this->table,$data);
@@ -39,6 +40,7 @@ class M_users_santri extends CI_Model {
             'tempat_lahir'  => $this->input->post('tempat_lahir', TRUE),
             'tanggal_lahir' => $this->input->post('tanggal_lahir', TRUE),
             'gender'        => $this->input->post('gender', TRUE),
+            'id_level_user' => 3,
             'tahun_masuk'   => $this->input->post('tahun_masuk', TRUE)
         );
         }else{
@@ -51,6 +53,7 @@ class M_users_santri extends CI_Model {
             'tanggal_lahir' => $this->input->post('tanggal_lahir', TRUE),
             'gender'        => $this->input->post('gender', TRUE),
             'foto'          => $foto,
+            'id_level_user' => 3,
             'tahun_masuk'   => $this->input->post('tahun_masuk', TRUE)
             //'id_rombel'     => $this->input->post('rombel',TRUE)
         );

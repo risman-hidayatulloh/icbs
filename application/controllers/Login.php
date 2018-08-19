@@ -19,23 +19,26 @@ class Login extends CI_Controller {
 
             $username = $this->input->post('username');
             $password = $this->input->post('password');
-            $loginUser = $this->M_login->chekLogin($username, $password);
-            //$loginGuru = $this->Model_guru->chekLogin($username, $password);
-            if (!empty($loginUser)) {
-                // sukses login user
-                $this->session->set_userdata($loginUser);
+            $loginUserSekolah = $this->M_login->chekLoginSekolah($username, $password);
+            $loginUserSantri = $this->M_login->chekLoginSantri($username, $password);
+            
+            // sukses login user sekolah            
+            if (!empty($loginUserSekolah)) {
+                $this->session->set_userdata($loginUserSekolah);
                 redirect('home');
             }
-            // elseif (!empty($loginGuru)) {
-            //     // login guru
-            //     $session = array(
-            //         'nama_lengkap'  =>  $loginGuru['nama_guru'],
-            //         'id_level_user' =>  3,
-            //         'nis' =>  $loginGuru['nuptk'],
-            //         'id_guru'       =>  $loginGuru['id_guru']);
-            //     $this->session->set_userdata($session);
-            //     redirect('laporan_pembayaran/spp');
-            // }
+            // login guru
+            elseif (!empty($loginUserSantri)) {
+                // session - database
+                $session = array(
+                    'nama_lengkap'  =>  $loginUserSantri['nama'],
+                    'id_level_user' =>  3,
+                    'foto' =>  $loginUserSantri['foto'],
+                    'tahun_masuk' =>  $loginUserSantri['tahun_masuk'],
+                    'username'       =>  $loginUserSantri['username']);
+                $this->session->set_userdata($session);
+                redirect('home');
+            }
             else {
                 // gagal login
                 redirect('login');
