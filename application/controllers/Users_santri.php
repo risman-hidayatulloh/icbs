@@ -49,6 +49,7 @@ Class Users_santri extends CI_Controller {
             array('db' => 'nama', 'dt' => 'nama'),
             array('db' => 'tempat_lahir', 'dt' => 'tempat_lahir'),
             array('db' => 'tanggal_lahir', 'dt' => 'tanggal_lahir'),
+            array('db' => 'tahun_masuk', 'dt' => 'tahun_masuk'),
             array(
                 'db' => 'username',
                 'dt' => 'aksi',

@@ -13,18 +13,19 @@ class M_users_santri extends CI_Model {
             'tanggal_lahir' => $this->input->post('tanggal_lahir', TRUE),
             'gender'        => $this->input->post('gender', TRUE),
             'foto'          => $foto,
-            'id_rombel'     => $this->input->post('rombel',TRUE)
+            //'id_rombel'     => $this->input->post('rombel',TRUE),
+            'tahun_masuk'   => $this->input->post('tahun_masuk', TRUE)
         );
         $this->db->insert($this->table,$data);
         
-        $tahun_akademik = $this->db->get_where('tbl_tahun_akademik',array('is_aktif'=>'y'))->row_array();
+        // $tahun_akademik = $this->db->get_where('tbl_tahun_akademik',array('is_aktif'=>'y'))->row_array();
         
-        $history =  array(
-            'username'            =>  $this->input->post('username', TRUE),
-            'id_tahun_akademik'   =>  $tahun_akademik['id_tahun_akademik'],
-            'id_rombel'           =>  $this->input->post('rombel', TRUE)
-            );
-        $this->db->insert('tbl_history_kelas',$history);
+        // $history =  array(
+        //     'username'            =>  $this->input->post('username', TRUE),
+        //     'id_tahun_akademik'   =>  $tahun_akademik['id_tahun_akademik'],
+        //     'id_rombel'           =>  $this->input->post('rombel', TRUE)
+        //     );
+        // $this->db->insert('tbl_history_kelas',$history);
     }
     
     function update($foto) {
@@ -35,7 +36,8 @@ class M_users_santri extends CI_Model {
             'kd_agama'      => $this->input->post('agama', TRUE),
             'tempat_lahir'  => $this->input->post('tempat_lahir', TRUE),
             'tanggal_lahir' => $this->input->post('tanggal_lahir', TRUE),
-            'gender'        => $this->input->post('gender', TRUE)
+            'gender'        => $this->input->post('gender', TRUE),
+            'tahun_masuk'   => $this->input->post('tahun_masuk', TRUE)
         );
         }else{
             // update with foto
@@ -46,7 +48,8 @@ class M_users_santri extends CI_Model {
             'tanggal_lahir' => $this->input->post('tanggal_lahir', TRUE),
             'gender'        => $this->input->post('gender', TRUE),
             'foto'          => $foto,
-            'id_rombel'     => $this->input->post('rombel',TRUE)
+            'tahun_masuk'   => $this->input->post('tahun_masuk', TRUE)
+            //'id_rombel'     => $this->input->post('rombel',TRUE)
         );
         }
         $username   = $this->input->post('username');

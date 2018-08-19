@@ -1,8 +1,8 @@
 <div class="col-md-12">
     <!-- start: DYNAMIC TABLE PANEL -->
-   <?php echo anchor('users_santri/add','Input Data Baru',array('class'=>'btn btn-danger btn-sm'))?>
+   <!-- <?php echo anchor('users_santri/add','Input Data Baru',array('class'=>'btn btn-danger btn-sm'))?> -->
    <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Import Data Excel Dari Dapodik</button>
+<!-- <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Import Data Excel Dari Dapodik</button> -->
 
     <div style="margin-bottom: 10px;"></div>
     <div class="panel panel-default">
@@ -27,6 +27,7 @@
                         <th>NAMA</th>
                         <th>TEMPAT LAHIR</th>
                         <th>TANGGAL LAHIR</th>
+                        <th>TAHUN MASUK</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -61,6 +62,7 @@
                     { "data": "nama" },
                     { "data": "tempat_lahir" },
                     { "data": "tanggal_lahir", "width": "150px" },
+                    { "data": "tahun_masuk" },
                     { "data": "aksi","width": "80px" },
                 ]
             } );
@@ -73,10 +75,9 @@
         } );
     </script>
     <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<!-- <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
-    <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -95,4 +96,4 @@
     </div>
 
   </div>
-</div>
+</div> -->

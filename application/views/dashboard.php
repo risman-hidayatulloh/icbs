@@ -1,40 +1,57 @@
     <div class="container">    
 
-        <div class="row">
-            <div class="col-md-2">
-                <button class="btn btn-icon btn-block">
-                    <i class="clip-user-3"></i>
-                    Total Santri <span class="badge badge-primary"> ! </span>
-                    </br> 0
-                </button>
-            </div>
-
-            <div class="col-md-2">
-                <button class="btn btn-icon btn-block">
-                    <i class="clip-user-5"></i>
-                    Total Karyawan <span class="badge badge-primary"> ! </span>
-                    </br> <?php  $jumlah_users_sekolah=$this->db->get('tbl_user_sekolah')->num_rows();
-                                    echo $jumlah_users_sekolah;    ?>
-                </button>
-            </div>
-
-            <div class="col-md-2">
-                <button class="btn btn-icon btn-block">
-                    <i class="fa fa-money"></i>
-                    Total Pemasukan <span class="badge badge-primary"> ! </span>
-                    </br> 0
-                </button>
-            </div>
-
-            <div class="col-md-2">
-                <button class="btn btn-icon btn-block">
-                    <i class="fa fa-money"></i>
-                    Total pengeluaran <span class="badge badge-primary"> ! </span>
-                    </br> 0
-                </button>
+        <div class="space12">
+            <div class="btn-group btn-group-justified">
+                <a class="btn btn-teal" href="javascript:;">
+                    <i class="clip-user-5"></i> </br>
+                       <?php   //$jumlah_users_sekolah=$this->db->get('tbl_user_sekolah')->num_rows();
+                                //echo $jumlah_users_sekolah;
+                            $this->db->select('*');
+                            $this->db->where('id_level_user = 1');
+                            $query = $this->db->get('tbl_user_sekolah');
+                            $num = $query->num_rows();
+                            echo $num;
+                        ?>
+                    </br> Admin
+                </a>
+                <a class="btn btn-blue active" href="javascript:;">
+                    <i class="clip-user-5"></i> </br>
+                       <?php   //$jumlah_users_sekolah=$this->db->get('tbl_user_sekolah')->num_rows();
+                                //echo $jumlah_users_sekolah;
+                            $this->db->select('*');
+                            $this->db->where('id_level_user = 2');
+                            $query = $this->db->get('tbl_user_sekolah');
+                            $num = $query->num_rows();
+                            echo $num;
+                        ?>
+                    </br> Karyawan 
+                </a>
+                <a class="btn btn-teal" href="javascript:;">
+                    <i class="clip-user-3"></i> </br>
+                    0
+                    </br> Santri
+                </a>
             </div>
         </div>
-        
+        <div class="space12">
+            <div class="btn-group btn-group-justified">
+                <a class="btn btn-teal" href="javascript:;">
+                    <i class="fa fa-money"></i> </br>
+                    Pemasukan
+                    </br> Rp. 0 ,-
+                </a>
+                <a class="btn btn-blue active" href="javascript:;">
+                    <i class="fa fa-money"></i> </br>
+                    pengeluaran
+                    </br> Rp. 0 ,-
+                </a>
+                <!-- <a class="btn btn-teal" href="javascript:;">
+                    <i class="clip-user-3"></i> </br>
+                    0
+                    </br> Santri
+                </a> -->
+            </div>
+        </div>                       
 
         <!-- start: PAGE CONTENT -->
         <div class="row">

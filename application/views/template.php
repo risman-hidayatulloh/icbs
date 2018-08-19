@@ -371,8 +371,23 @@
                         <!-- start: USER DROPDOWN -->
                         <li class="dropdown current-user">
                             <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
+                            <?php 
+                                $id_level_user = $this->session->userdata('id_level_user');
+                                //level santri
+                                if ($this->session->id_level_user == 3){ 
+                                ?>
+                                    <img class="nav-user-photo" src="<?php echo base_url('uploads/foto_user_santri/'.$this->session->userdata('foto')); ?>" class="circle-img" alt="" height="30" width="30" />
+                            <?php
+                                }  
+                                //level sekolah
+                                else {
+                                ?>  
+                                    <img class="nav-user-photo" src="<?php echo base_url('uploads/foto_user_sekolah/'.$this->session->userdata('foto')); ?>" class="circle-img" alt="" height="30" width="30" />
+                            <?php
+                                }
+                                ?>
                                 <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNDvfpfEu-BQtBfYa7oq5IS2GwSM39aUfGpSa1Y5arr-vpfeqZ" class="circle-img" alt="" height="30" width="30"> -->
-                                <img class="nav-user-photo" src="<?php echo base_url('uploads/foto_user_sekolah/'.$this->session->userdata('foto')); ?>" class="circle-img" alt="" height="30" width="30" />
+                                
                                 <span class="username"><?php echo $this->session->userdata('nama_lengkap') ?></span>
                                 <i class="fa fa-angle-down" aria-hidden="true"></i>
                             </a>
@@ -619,9 +634,7 @@
                     <!-- end: PAGE HEADER -->
                     <!-- start: PAGE CONTENT -->
                     <div class="row">
-
-
-
+                        
                         <?php echo $contents; ?>
 
                         <!-- end: PAGE CONTENT-->
