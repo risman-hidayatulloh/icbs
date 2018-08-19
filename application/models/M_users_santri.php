@@ -7,6 +7,7 @@ class M_users_santri extends CI_Model {
     function save($foto) {
         $data = array(
             'username'      => $this->input->post('username', TRUE),
+            'password'      => md5($this->input->post('password', TRUE)),
             'kd_agama'      => $this->input->post('agama', TRUE),
             'nama'          => $this->input->post('nama', TRUE),
             'tempat_lahir'  => $this->input->post('tempat_lahir', TRUE),
@@ -33,6 +34,7 @@ class M_users_santri extends CI_Model {
             // update without foto
             $data = array(
             'nama'          => $this->input->post('nama', TRUE),
+            'password'      => md5($this->input->post('password', TRUE)),
             'kd_agama'      => $this->input->post('agama', TRUE),
             'tempat_lahir'  => $this->input->post('tempat_lahir', TRUE),
             'tanggal_lahir' => $this->input->post('tanggal_lahir', TRUE),
@@ -43,6 +45,7 @@ class M_users_santri extends CI_Model {
             // update with foto
             $data = array(
             'nama'          => $this->input->post('nama', TRUE),
+            'password'      => md5($this->input->post('password', TRUE)),
             'kd_agama'      => $this->input->post('agama', TRUE),
             'tempat_lahir'  => $this->input->post('tempat_lahir', TRUE),
             'tanggal_lahir' => $this->input->post('tanggal_lahir', TRUE),

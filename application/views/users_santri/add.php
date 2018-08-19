@@ -31,20 +31,26 @@
                 <label class="col-sm-3 control-label" for="form-field-1">
                     USERNAME
                 </label>
-                <div class="col-sm-4">
+                <div class="col-sm-5">
                     <input type="text" name="username" placeholder="MASUKAN USERNAME" id="form-field-1" class="form-control">
                 </div>
             </div>
-
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="form-field-1">
+                    PASSWORD
+                </label>
+                <div class="col-sm-5">
+                    <input type="password" name="password" placeholder="MASUKAN PASSWORD" id="form-field-1" class="form-control">
+                </div>
+            </div>
             <div class="form-group">
                 <label class="col-sm-3 control-label" for="form-field-1">
                     NAMA 
                 </label>
-                <div class="col-sm-9">
+                <div class="col-sm-5">
                     <input type="text" name="nama" placeholder="MASUKAN NAMA LENGKAP" id="form-field-1" class="form-control">
                 </div>
             </div>
-
             <div class="form-group">
                 <label class="col-sm-3 control-label" for="form-field-1">
                     TTL
@@ -96,7 +102,7 @@
                 <label class="col-sm-3 control-label" for="form-field-1">
                     TAHUN MASUK 
                 </label>
-                <div class="col-sm-9">
+                <div class="col-sm-5">
                     <input type="text" name="tahun_masuk" placeholder="MASUKAN TAHUN MASUK" id="form-field-1" class="form-control">
                 </div>
             </div>
