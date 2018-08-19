@@ -1,6 +1,6 @@
 <?php
 
-Class Home extends CI_Controller {
+Class Pesan_santri extends CI_Controller {
 
     function __construct() {
         parent::__construct();
@@ -12,19 +12,16 @@ Class Home extends CI_Controller {
         //cek session login
         if (!isset($id_level_user)) { 
             redirect('login');
+        }//level santri
+        else if ($this->session->id_level_user == 3){ 
+            redirect('login');
         }
     }
 
     function index() {
         $this->cekUser();
-        //login awal santri
-        if($this->session->id_level_user == 3){
-            $this->template->load('template', 'dashboard_santri');
-        }//login selain santri
-        else{  
-            $this->template->load('template', 'dashboard_sekolah');
-        }
-
+        $this->template->load('template', 'users_sekolah/pesan_santri');
     }
+
 
 }
