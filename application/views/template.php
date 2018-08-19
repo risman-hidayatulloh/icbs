@@ -15,7 +15,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <meta content="Responsive Admin Template build with Twitter Bootstrap and jQuery" name="description" />
-        <meta content="ClipTheme" name="author" />
+        <meta content="Line" name="risman_100" />
         <!-- end: META -->
         <!-- start: MAIN CSS -->
         <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Raleway:400,100,200,300,500,600,700,800,900/" />
@@ -49,8 +49,9 @@
                     </button>
                     <!-- end: RESPONSIVE MENU TOGGLER -->
                     <!-- start: LOGO -->
-                    <a class="navbar-brand" href="<?php echo site_url();?>home">
-                        ICBS
+                    <a class="navbar-brand" href="#">
+                    <!-- <img src="<?php echo base_url();?>/assets/img/logo.png" alt="logo" height="30"> -->
+                    Akademik
                     </a>
                     <!-- end: LOGO -->
                 </div>
@@ -370,7 +371,8 @@
                         <!-- start: USER DROPDOWN -->
                         <li class="dropdown current-user">
                             <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNDvfpfEu-BQtBfYa7oq5IS2GwSM39aUfGpSa1Y5arr-vpfeqZ" class="circle-img" alt="" height="30" width="30">
+                                <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNDvfpfEu-BQtBfYa7oq5IS2GwSM39aUfGpSa1Y5arr-vpfeqZ" class="circle-img" alt="" height="30" width="30"> -->
+                                <img class="nav-user-photo" src="<?php echo base_url('uploads/foto_user_sekolah/'.$this->session->userdata('foto')); ?>" class="circle-img" alt="" height="30" width="30" />
                                 <span class="username"><?php echo $this->session->userdata('nama_lengkap') ?></span>
                                 <i class="fa fa-angle-down" aria-hidden="true"></i>
                             </a>
@@ -671,7 +673,6 @@
                 <script src="<?php echo base_url();?>/template/bower_components/jquery-1.x/dist/jquery.min.js"></script>
                 <![endif]-->
             <!--[if gte IE 9]><!-->
-
             <script type="text/javascript" src="<?php echo base_url();?>/template/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
             <script type="text/javascript" src="<?php echo base_url();?>/template/bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
             <script type="text/javascript" src="<?php echo base_url();?>/template/bower_components/blockUI/jquery.blockUI.js"></script>

@@ -21,14 +21,9 @@
         <!-- end: META -->
         <!-- start: MAIN CSS -->
         <link rel="stylesheet" href="<?php echo base_url();?>/template/bower_components/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="<?php echo base_url();?>/template/bower_components/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="<?php echo base_url();?>/template/assets/fonts/clip-font.min.css">
         <link rel="stylesheet" href="<?php echo base_url();?>/template/assets/css/main.css">
         <link rel="stylesheet" href="<?php echo base_url();?>/template/bower_components/iCheck/skins/all.css">
-        <link rel="stylesheet" href="<?php echo base_url();?>/template/bower_components/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
-        <link rel="stylesheet" href="<?php echo base_url();?>/template/bower_components/perfect-scrollbar/css/perfect-scrollbar.css">
-        <link rel="stylesheet" href="<?php echo base_url();?>/template/assets/css/theme/light.min.css" type="text/css" id="skin_color">
-        <link rel="stylesheet" href="<?php echo base_url();?>/template/assets/css/print.css" type="text/css" media="print"/>
+        <link rel="stylesheet" href="<?php echo base_url();?>/template/bower_components/font-awesome/css/font-awesome.min.css"> <!-- icon -->
         <link href="<?php echo base_url();?>/template/bower_components/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet" />
         <link href="<?php echo base_url();?>/template/bower_components/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" />
         <!--[if IE 7]>
@@ -215,26 +210,17 @@
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
         <script src="<?php echo base_url();?>/template/bower_components/jquery/dist/jquery.min.js"></script>
         <!--<![endif]-->
-        <script src="<?php echo base_url();?>/template/bower_components/jquery-ui/jquery-ui.min.js"></script>
         <script src="<?php echo base_url();?>/template/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="<?php echo base_url();?>/template/bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
-        <script src="<?php echo base_url();?>/template/bower_components/blockUI/jquery.blockUI.js"></script>
         <script src="<?php echo base_url();?>/template/bower_components/iCheck/icheck.min.js"></script>
-        <!-- <script src="http://www.cliptheme.com/preview/admin/clip-one/assets/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script> -->
         <script src="<?php echo base_url();?>/template/bower_components/perfect-scrollbar/js/min/perfect-scrollbar.jquery.min.js"></script>
-        <!-- <script src="http://www.cliptheme.com/preview/admin/clip-one/assets/plugins/less/less-1.5.0.min.js"></script> -->
         <script src="<?php echo base_url();?>/template/bower_components/jquery.cookie/jquery.cookie.js"></script>
-        <script src="<?php echo base_url();?>/template/bower_components/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
         <script src="<?php echo base_url();?>/template/assets/js/main.js"></script>
         <!-- end: MAIN JAVASCRIPTS -->
         <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
         <script src="<?php echo base_url();?>/template/bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
         <script src="<?php echo base_url();?>/template/assets/js/login.js"></script>
         <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-        <!-- modal -->
-        <script src="<?php echo base_url();?>/bower_components/bootstrap-modal/js/bootstrap-modal.js"></script>
-        <script src="<?php echo base_url();?>/bower_components/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
-        <script src="<?php echo base_url();?>/assets/js/min/ui-modals.min.js"></script>
+        
         <script>
             jQuery(document).ready(function() {
                 Main.init();
@@ -243,4 +229,19 @@
         </script>
     </body>
     <!-- end: BODY -->
+
+    <!-- referensi theme -->
+    <!-- <link rel="stylesheet" href="<?php echo base_url();?>/template/assets/fonts/clip-font.min.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>/template/bower_components/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>/template/bower_components/perfect-scrollbar/css/perfect-scrollbar.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>/template/assets/css/theme/light.min.css" type="text/css" id="skin_color">
+    <link rel="stylesheet" href="<?php echo base_url();?>/template/assets/css/print.css" type="text/css" media="print"/> -->
+    
+    <!-- <script src="<?php echo base_url();?>/template/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="<?php echo base_url();?>/template/bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+    <script src="<?php echo base_url();?>/template/bower_components/blockUI/jquery.blockUI.js"></script>
+    <script src="<?php echo base_url();?>/template/bower_components/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script> -->
+    <!-- <script src="http://www.cliptheme.com/preview/admin/clip-one/assets/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script> -->
+    <!-- <script src="http://www.cliptheme.com/preview/admin/clip-one/assets/plugins/less/less-1.5.0.min.js"></script> -->
+    
 </html>

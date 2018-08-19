@@ -104,7 +104,7 @@ Class Users_sekolah extends CI_Controller {
      function upload_foto_user(){
         $config['upload_path']          = './uploads/foto_user_sekolah/';
         $config['allowed_types']        = 'jpg|png';
-        $config['max_size']             = 1024; // imb
+        $config['max_size']             = 10240; // imb
         $this->load->library('upload', $config);
             // proses upload
         $this->upload->do_upload('userfile');

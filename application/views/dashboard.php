@@ -17,7 +17,24 @@
                                     echo $jumlah_users_sekolah;    ?>
                 </button>
             </div>
+
+            <div class="col-md-2">
+                <button class="btn btn-icon btn-block">
+                    <i class="fa fa-money"></i>
+                    Total Pemasukan <span class="badge badge-primary"> ! </span>
+                    </br> 0
+                </button>
+            </div>
+
+            <div class="col-md-2">
+                <button class="btn btn-icon btn-block">
+                    <i class="fa fa-money"></i>
+                    Total pengeluaran <span class="badge badge-primary"> ! </span>
+                    </br> 0
+                </button>
+            </div>
         </div>
+        
 
         <!-- start: PAGE CONTENT -->
         <div class="row">
