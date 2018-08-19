@@ -8,7 +8,26 @@ Class Users_sekolah extends CI_Controller {
         $this->load->model('M_users_sekolah');
     }
 
+    //cek user
+    public function cekUser(){
+        $id_level_user = $this->session->userdata('id_level_user');
+        //cek session login
+        if (!isset($id_level_user)) { 
+            redirect('login');
+        }//level santri
+        else if ($this->session->id_level_user == 3){ 
+            redirect('login');
+        }//level sekolah
+        // else if ($this->session->id_level_user == 2){ 
+        //     redirect('users_santri');
+        // }//level admin
+        // else if ($this->session->id_level_user == 1){ 
+        //     redirect('users_santri');
+        // }
+    }
+
     function data() {
+        $this->cekUser();
         // nama tabel
         $table = 'v_tbl_user_sekolah';
         // nama PK
@@ -42,10 +61,12 @@ Class Users_sekolah extends CI_Controller {
     }
 
     function index() {
+        $this->cekUser();
         $this->template->load('template', 'users_sekolah/list');
     }
 
     function add() {
+        $this->cekUser();
         if (isset($_POST['submit'])) {
             $uplodFoto = $this->upload_foto_user();
             $this->M_users_sekolah->save($uplodFoto);
@@ -56,6 +77,7 @@ Class Users_sekolah extends CI_Controller {
     }
     
     function edit(){
+        $this->cekUser();
         if(isset($_POST['submit'])){
             $uplodFoto = $this->upload_foto_user();
             $this->M_users_sekolah->update($uplodFoto);
@@ -68,6 +90,7 @@ Class Users_sekolah extends CI_Controller {
     }
     
     function delete(){
+        $this->cekUser();
         $id_user_sekolah = $this->uri->segment(3);
         if(!empty($id_user_sekolah)){
             // proses delete data
@@ -91,6 +114,7 @@ Class Users_sekolah extends CI_Controller {
     
     
     function rule(){
+        $this->cekUser();
         $this->template->load('template','users_sekolah/rule');
     }
     
